@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticCell : MonoBehaviour
+public class StaticCell : Cell
 {
     [SerializeField] private StaticCell leftCell, rightCell, upCell, downCell;
     public StaticCell LeftCell => leftCell;

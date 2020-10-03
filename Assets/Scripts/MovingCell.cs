@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingCell : MonoBehaviour
+public class MovingCell : Cell
 {
-    // Start is called before the first frame update
-    void Start()
+    public void MoveCell(Transform point_B)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.position = point_B.position;
     }
 }

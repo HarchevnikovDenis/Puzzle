@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class CellManager : MonoBehaviour
 {
+    [SerializeField] private GameSceneUIController sceneUIController;
     [SerializeField] private List<StaticCell> staticCells;
     [SerializeField] private List<MovingCell> movingCells;
 
     private void Start()
     {
-        RandomlyArrangeCells();
+        for(int i = 0; i < staticCells.Count - 2; i++)
+        {
+            movingCells[i].transform.position = staticCells[i].transform.position;
+            staticCells[i].isUsed = true;
+            staticCells[i].MovingCell = movingCells[i];
+        }
+
+        movingCells[7].transform.position = staticCells[8].transform.position;
+        staticCells[8].isUsed = true;
+        staticCells[8].MovingCell = movingCells[7];
+
+        //RandomlyArrangeCells();
     }
 
-    private void RandomlyArrangeCells()
+    /*private void RandomlyArrangeCells()
     {
         int cellsCount = movingCells.Count - 1;
         while(cellsCount >= 0)
@@ -26,7 +38,7 @@ public class CellManager : MonoBehaviour
                 cellsCount--;
             }
         }
-    }
+    }*/
 
     public bool CatchPlayerInput(int horizontal, int vertical)
     {
@@ -76,11 +88,38 @@ public class CellManager : MonoBehaviour
 
     private void MoveCell(StaticCell startCell, StaticCell endCell)
     {
-        startCell.MovingCell.transform.position = endCell.transform.position;
+        startCell.MovingCell.MoveCell(endCell.transform);
 
         startCell.isUsed = false;
         endCell.isUsed = true;
         endCell.MovingCell = startCell.MovingCell;
         startCell.MovingCell = null;
+
+        if(endCell.MovingCell.ID == endCell.ID)
+        {
+            if(CheckLevelCompleted())
+            {
+                // Player WON
+                sceneUIController.ShowLevelCompletePanel();
+            }
+        }
+    }
+
+    private bool CheckLevelCompleted()
+    {
+        if(staticCells[staticCells.Count - 1].MovingCell != null)
+        {
+            return false;
+        }
+
+        for(int i = 0; i < staticCells.Count - 1; i++)
+        {
+            if(staticCells[i].ID != staticCells[i].MovingCell?.ID)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
