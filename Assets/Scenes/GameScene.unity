@@ -136,7 +136,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &104091645
 Transform:
@@ -164,6 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 0}
+  rightCell: {fileID: 1789513089}
+  upCell: {fileID: 2063636388}
+  downCell: {fileID: 416851056}
 --- !u!1 &105197779
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +183,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &105197780
 Transform:
@@ -207,6 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 540321537}
+  rightCell: {fileID: 0}
+  upCell: {fileID: 0}
+  downCell: {fileID: 1677105152}
 --- !u!1 &334154138
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +292,7 @@ GameObject:
   - component: {fileID: 359587863}
   - component: {fileID: 359587865}
   - component: {fileID: 359587864}
+  - component: {fileID: 359587866}
   m_Layer: 5
   m_Name: InputController
   m_TagString: Untagged
@@ -347,6 +356,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359587862}
   m_CullTransparentMesh: 0
+--- !u!114 &359587866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359587862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34f524a30bad984fb0969b368c542da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellManager: {fileID: 821432611}
 --- !u!1 &416851054
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +384,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &416851055
 Transform:
@@ -390,6 +412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 0}
+  rightCell: {fileID: 456112898}
+  upCell: {fileID: 104091646}
+  downCell: {fileID: 0}
 --- !u!1 &456112896
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +431,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &456112897
 Transform:
@@ -433,6 +459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 416851056}
+  rightCell: {fileID: 1759607895}
+  upCell: {fileID: 1789513089}
+  downCell: {fileID: 0}
 --- !u!1 &504193422
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +656,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &540321536
 Transform:
@@ -654,6 +684,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 2063636388}
+  rightCell: {fileID: 105197781}
+  upCell: {fileID: 0}
+  downCell: {fileID: 1789513089}
 --- !u!1 &821432609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1154,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1677105151
 Transform:
@@ -1148,6 +1182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 1789513089}
+  rightCell: {fileID: 0}
+  upCell: {fileID: 105197781}
+  downCell: {fileID: 1759607895}
 --- !u!1 &1759607893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1201,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1759607894
 Transform:
@@ -1191,6 +1229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 456112898}
+  rightCell: {fileID: 0}
+  upCell: {fileID: 1677105152}
+  downCell: {fileID: 0}
 --- !u!1 &1786307019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,7 +1347,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1789513088
 Transform:
@@ -1333,6 +1375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 104091646}
+  rightCell: {fileID: 1677105152}
+  upCell: {fileID: 540321537}
+  downCell: {fileID: 456112898}
 --- !u!1 &1816649937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1584,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2063636387
 Transform:
@@ -1566,6 +1612,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39643f5ca646db9438780519acc04227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftCell: {fileID: 0}
+  rightCell: {fileID: 540321537}
+  upCell: {fileID: 0}
+  downCell: {fileID: 104091646}
 --- !u!1 &2130229749
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,8 +22,65 @@ public class CellManager : MonoBehaviour
             {
                 movingCells[cellsCount].transform.position = staticCells[randomStaticCellIndex].transform.position;
                 staticCells[randomStaticCellIndex].isUsed = true;
+                staticCells[randomStaticCellIndex].MovingCell = movingCells[cellsCount];
                 cellsCount--;
             }
         }
+    }
+
+    public bool CatchPlayerInput(int horizontal, int vertical)
+    {
+        StaticCell emptyCell = GetEmptyStaticCell();
+        if(emptyCell == null) return false;   // ERROR
+
+        if(horizontal == 1 && emptyCell.LeftCell)
+        {
+            MoveCell(emptyCell.LeftCell, emptyCell);
+            return true;
+        }
+
+        if(horizontal == -1 && emptyCell.RightCell)
+        {
+            MoveCell(emptyCell.RightCell, emptyCell);
+            return true;
+        }
+
+        if(vertical == 1 && emptyCell.DownCell)
+        {
+            MoveCell(emptyCell.DownCell, emptyCell);
+            return true;
+        }
+
+        if(vertical == -1 && emptyCell.UpCell)
+        {
+            MoveCell(emptyCell.UpCell, emptyCell);
+            return true;
+        }
+
+        return false;
+    }
+
+    private StaticCell GetEmptyStaticCell()
+    {
+        foreach(StaticCell cell in staticCells)
+        {
+            if(cell.isUsed == false)
+            {
+                return cell;
+            }
+        }
+
+        throw new System.Exception("The system did not find an empty cell");
+        return null;
+    }
+
+    private void MoveCell(StaticCell startCell, StaticCell endCell)
+    {
+        startCell.MovingCell.transform.position = endCell.transform.position;
+
+        startCell.isUsed = false;
+        endCell.isUsed = true;
+        endCell.MovingCell = startCell.MovingCell;
+        startCell.MovingCell = null;
     }
 }
