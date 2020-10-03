@@ -10,21 +10,10 @@ public class CellManager : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < staticCells.Count - 2; i++)
-        {
-            movingCells[i].transform.position = staticCells[i].transform.position;
-            staticCells[i].isUsed = true;
-            staticCells[i].MovingCell = movingCells[i];
-        }
-
-        movingCells[7].transform.position = staticCells[8].transform.position;
-        staticCells[8].isUsed = true;
-        staticCells[8].MovingCell = movingCells[7];
-
-        //RandomlyArrangeCells();
+        RandomlyArrangeCells();
     }
 
-    /*private void RandomlyArrangeCells()
+    private void RandomlyArrangeCells()
     {
         int cellsCount = movingCells.Count - 1;
         while(cellsCount >= 0)
@@ -38,7 +27,7 @@ public class CellManager : MonoBehaviour
                 cellsCount--;
             }
         }
-    }*/
+    }
 
     public bool CatchPlayerInput(int horizontal, int vertical)
     {
