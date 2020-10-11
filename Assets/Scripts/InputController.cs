@@ -9,6 +9,8 @@ public class InputController : MonoBehaviour, IDragHandler
 
     private float Timer = 0.5f;
     private float currentTime;
+
+    
     private void Update()
     {
         currentTime += Time.deltaTime;
